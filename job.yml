@@ -1,0 +1,33 @@
+type: job
+name: test-job
+image:
+  type: build
+  build_source:
+    type: git
+    ref: 5a92db12e66de0758858a0c60ab41823ba160b78
+    branch_name: main
+    repo_url: https://github.com/kshitijgupta-ops/sample-job
+  build_spec:
+    type: tfy-python-buildpack
+    build_context_path: ./
+    command: python train.py
+    python_version: '3.11'
+    python_dependencies:
+      type: pip
+      pip_packages:
+        - scikit-learn==1.5.0
+        - numpy==1.23.2
+        - pandas==1.5.3
+trigger:
+  type: manual
+resources:
+  node:
+    type: node_selector
+  cpu_request: 0.2
+  cpu_limit: 0.5
+  memory_request: 200
+  memory_limit: 500
+  ephemeral_storage_request: 1000
+  ephemeral_storage_limit: 2000
+workspace_fqn: tfy-ea-dev-eo-az:kshitij-test
+retries: 0
