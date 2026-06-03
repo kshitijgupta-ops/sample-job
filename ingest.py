@@ -15,7 +15,7 @@ if os.environ.get("ENV", "staging") == "dev":
     vector_store_path = os.path.join(os.path.dirname(__file__), "vector-store")
 else:
     path = "/mnt/rag/Indian_Premier_League.pdf"
-    vector_store_path = "/vector-store"
+    vector_store_path = "/mnt/rag/vector-store"
 
 print("Using document path:", path)  # Debugging statement to confirm path
 try:
