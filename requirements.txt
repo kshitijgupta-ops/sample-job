@@ -6,3 +6,5 @@ pypdf
 faiss-cpu
 openai
 tiktoken
+langchain-qdrant 
+qdrant-client
