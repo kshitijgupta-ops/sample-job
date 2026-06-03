@@ -27,7 +27,7 @@ except Exception as e:
     raise
 
 # Split into chunks
-splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=200)
 chunks = splitter.split_documents(docs)
 
 # Your embedding code (API key pulled from env variable for security)
